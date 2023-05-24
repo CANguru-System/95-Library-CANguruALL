@@ -150,6 +150,7 @@
 #define sendCntLokBuffer_R 0x91
 #define sendLokBuffer 0x92
 #define sendLokBuffer_R 0x93
+#define sendCurrAmp 0x94
 #define RESET_MEM 0xFE
 #define START_OTA 0xFF
 
