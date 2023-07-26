@@ -11,6 +11,8 @@
 #ifndef CANguruDefs
 #define CANguruDefs
 
+#define CAN_FRAME_SIZE 13 /* maximum datagram size */
+
 // allgemein
 #define wait_time_long 500
 #define wait_time_medium 50
