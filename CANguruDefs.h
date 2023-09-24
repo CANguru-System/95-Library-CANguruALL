@@ -98,7 +98,7 @@
  * CAN-Befehle (Märklin)
 */
 #define SYS_CMD 0x00    //Systembefehle
-#define SYS_STOPP		          0x02	//System - Stopp
+#define SYS_STOPP		          0x00	//System - Stopp
 #define SYS_GO		          0x01	//System - Go
 #define LokDiscovery 0x02
 #define LokDiscovery_R LokDiscovery+1
