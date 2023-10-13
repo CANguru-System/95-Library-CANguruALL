@@ -1,8 +1,8 @@
 
 #include <Arduino.h>
 #include "EEPROM.h"
+#include "Preferences.h"
 #include "CANguruDefs.h"
-
 
 // Funktion stellt sicher, dass keine unerlaubten 8-Bit-Werte geladen werden können
 uint8_t readValfromEEPROM(uint16_t adr, uint8_t val, uint8_t min, uint8_t max)

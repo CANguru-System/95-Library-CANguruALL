@@ -185,4 +185,8 @@ uint8_t oneChar(uint16_t val, uint8_t no);
 
 uint8_t hex2dec(uint8_t h);
 
+#ifndef pref
+Preferences preferences;
+#define pref
+#endif
 #endif
