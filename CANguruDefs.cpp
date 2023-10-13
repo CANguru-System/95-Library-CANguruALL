@@ -18,6 +18,19 @@ uint8_t readValfromEEPROM(uint16_t adr, uint8_t val, uint8_t min, uint8_t max)
   }
 }
 
+// Funktion stellt sicher, dass keine unerlaubten 8-Bit-Werte geladen werden können
+uint8_t readValfrompreferences(const char* key, uint8_t val, uint8_t min, uint8_t max)
+{
+  uint8_t v = preferences.readByte(key);
+  if ((v >= min) && (v <= max))
+    return v;
+  else
+  {
+    preferences.putUChar(key, val);
+    return val;
+  }
+}
+
 // Funktion stellt sicher, dass keine unerlaubten 16-Bit-Werte geladen werden können
 uint16_t readValfromEEPROM16(uint16_t adr, uint16_t val, uint16_t min, uint16_t max)
 {
