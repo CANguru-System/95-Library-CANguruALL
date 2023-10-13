@@ -19,9 +19,9 @@ uint8_t readValfromEEPROM(uint16_t adr, uint8_t val, uint8_t min, uint8_t max)
 }
 
 // Funktion stellt sicher, dass keine unerlaubten 8-Bit-Werte geladen werden können
-uint8_t readValfrompreferences(const char* key, uint8_t val, uint8_t min, uint8_t max)
+uint8_t readValfromPreferences(const char* key, uint8_t val, uint8_t min, uint8_t max)
 {
-  uint8_t v = preferences.readByte(key);
+  uint8_t v = preferences.getUChar(key, val);
   if ((v >= min) && (v <= max))
     return v;
   else
@@ -41,6 +41,19 @@ uint16_t readValfromEEPROM16(uint16_t adr, uint16_t val, uint16_t min, uint16_t 
   {
     EEPROM.writeUShort(adr, val);
     EEPROM.commit();
+    return val;
+  }
+}
+
+// Funktion stellt sicher, dass keine unerlaubten 16-Bit-Werte geladen werden können
+uint16_t readValfromPreferences16(const char* key, uint16_t val, uint16_t min, uint16_t max)
+{
+  uint16_t v = preferences.getUShort(key, val);
+  if ((v >= min) && (v <= max))
+    return v;
+  else
+  {
+    preferences.putUShort(key, val);
     return val;
   }
 }
