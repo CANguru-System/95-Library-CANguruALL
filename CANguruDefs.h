@@ -170,7 +170,7 @@ uint8_t readValfromPreferences(const char* key, uint8_t val, uint8_t min, uint8_
 
 // Funktion stellt sicher, dass keine unerlaubten 16-Bit-Werte geladen werden können
 uint16_t readValfromEEPROM16(uint16_t adr, uint16_t val, uint16_t min, uint16_t max);
-uint16_t readValfromPreferences16(const char* key, uint8_t val, uint8_t min, uint8_t max);
+uint16_t readValfromPreferences16(const char* key, uint16_t val, uint16_t min, uint16_t max);
 
 // Mit testMinMax wird festgestellt, ob ein Wert innerhalb der
 // Grenzen von min und max liegt
