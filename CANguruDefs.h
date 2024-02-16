@@ -78,9 +78,10 @@
 #define DEVTYPE_LEDSIGNAL 0x0057
 #define DEVTYPE_CANBOOSTER 0x0058
 #define DEVTYPE_GATE 0x0059
-#define DEVTYPE_CAR_CAR 0x005A
-#define DEVTYPE_CAR_RM 0x005B
-#define DEVTYPE_CAR_SERVO 0x005C
+#define DEVTYPE_STEPPER 0x005A
+#define DEVTYPE_CAR_CAR 0x005C
+#define DEVTYPE_CAR_RM 0x005D
+#define DEVTYPE_CAR_SERVO 0x005E
 #define DEVTYPE_LastCANguru 0x005F
 
 #define BASE_Offset 0x01
@@ -166,9 +167,11 @@ const uint8_t num_accessory = 4;
 
 // Funktion stellt sicher, dass keine unerlaubten 8-Bit-Werte geladen werden können
 uint8_t readValfromEEPROM(uint16_t adr, uint8_t val, uint8_t min, uint8_t max);
+uint8_t readValfromPreferences(Preferences& preferences, const char* key, uint8_t val, uint8_t min, uint8_t max);
 
 // Funktion stellt sicher, dass keine unerlaubten 16-Bit-Werte geladen werden können
 uint16_t readValfromEEPROM16(uint16_t adr, uint16_t val, uint16_t min, uint16_t max);
+uint16_t readValfromPreferences16(Preferences& preferences, const char* key, uint16_t val, uint16_t min, uint16_t max);
 
 // Mit testMinMax wird festgestellt, ob ein Wert innerhalb der
 // Grenzen von min und max liegt
